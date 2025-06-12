@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clean Water Quest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header">
+    <h1>🚰 Clean Water Quest</h1>
+    <div style="margin-bottom: 10px;">
+      <button id="reset-btn" style="font-size:1em; padding:6px 18px; margin-right:10px;">Reset</button>
+      <button id="quit-btn" style="font-size:1em; padding:6px 18px;">Quit</button>
+    </div>
+    <div class="info">
+      ⏱ Timer: <span id="timer">60</span> |
+      🚶 Steps: <span id="steps">0</span> |
+      💧 Score: <span id="score">300</span>
+    </div>
+  </div>
+
+  <!-- Start button for the game -->
+  <button id="start-btn" style="font-size: 1.2em; margin: 20px; padding: 10px 30px;">Start Game</button>
+
+  <!-- Water bar will be added by JS above the game -->
+
+  <div id="game-container" style="display:none;">
+    <!-- Maze board -->
+    <div id="game-board" class="grid"></div>
+    <!-- Arrow keys will be added here by JS -->
+  </div>
+
+  <div id="message" class="message"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
