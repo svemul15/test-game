@@ -1,0 +1,181 @@
+/* Add your CSS here */
+
+/* Use a modern, clean font for the whole page */
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif; /* Modern font stack */
+  background-color: #f4f8fb; /* Light background for contrast */
+  margin: 0;
+  padding: 0;
+}
+/* Make the hero section more blue and classy, and use a distinctive font */
+header {
+  /* Add Gemini_Intel_AI.png as a background image behind the hero section and headers */
+  background:
+    linear-gradient(to bottom, #003366cc 60%, #005fa3cc 100%), /* Gradient overlay for readability */
+    url('img/Gemini_Intel_AI.png') center/cover no-repeat; /* Gemini image as background */
+  color: #fff;
+  padding: 48px 0 44px 0;
+  text-align: center;
+  border-radius: 0 0 18px 18px; /* Rounded bottom corners */
+  box-shadow: 0 4px 16px rgba(0, 60, 120, 0.10); /* Soft shadow */
+  font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif; /* Distinctive, modern font for hero */
+}
+
+/* Style the logo image with a little more space */
+header img {
+  width: 130px; /* Set logo width */
+  height: auto; /* Keep aspect ratio */
+  margin-bottom: 24px; /* Space below logo */
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08)); /* Soft shadow under logo */
+  background: #2b5e83; /* Blue background to fit the website aesthetic */
+  padding: 12px; /* Add space around the logo */
+  border-radius: 16px; /* Rounded corners for the logo background */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10); /* Extra shadow for emphasis */
+}
+
+/* Modern headline style */
+header h1 {
+  font-size: 2.5em; /* Make headline large */
+  margin: 12px 0 18px 0; /* Space above and below */
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Subtle text shadow */
+}
+
+/* Modern subheading style */
+header p {
+  font-size: 1.18em; /* Slightly larger text */
+  max-width: 520px; /* Limit width for readability */
+  margin: 0 auto; /* Center the paragraph */
+  margin-bottom: 0; /* Remove extra space below */
+  color: #e3f2fd; /* Lighter blue for subheading */
+  line-height: 1.6;
+}
+
+/* Timeline section styles */
+section {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Arrange cards in a row */
+  overflow-x: auto; /* Enable horizontal scroll if needed */
+  gap: 24px; /* Space between cards */
+  padding: 36px 16px 24px 16px; /* Padding around the timeline */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  background: #f4f8fb; /* Match page background */
+  align-items: stretch; /* Stretch cards to same height */
+  /* Enable scroll snap for horizontal timeline */
+  scroll-snap-type: x mandatory; /* Snap horizontally, required */
+}
+
+/* Timeline card styles */
+section > div {
+  background: #fff; /* White card background */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 2px 12px rgba(0, 60, 120, 0.10); /* Soft card shadow */
+  min-width: 260px; /* Minimum card width */
+  max-width: 280px; /* Maximum card width */
+  flex: 0 0 auto; /* Prevent cards from stretching */
+  padding: 20px 18px 18px 18px; /* Space inside card */
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.20s cubic-bezier(0.22, 1, 0.36, 1); /* Smooth hover effect */
+  position: relative;
+  cursor: pointer; /* Show pointer on hover */
+  scroll-snap-align: start; /* Each card snaps to the start of the scroll area */
+}
+
+/* Card hover effect */
+section > div:hover {
+  /* Lift card up, scale, and rotate slightly for a playful effect */
+  transform: translateY(-12px) scale(1.05) rotate(-1deg);
+  box-shadow: 0 12px 32px rgba(0, 60, 120, 0.22); /* Deeper shadow */
+  z-index: 2;
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Card year style */
+section h2 {
+  font-size: 1.3em;
+  color: #0071c5; /* Intel blue */
+  margin: 0 0 4px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Card title style */
+section h3 {
+  font-size: 1.1em;
+  color: #003366; /* Deep blue */
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+/* Card image style */
+section img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover; /* Crop image to fit */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 6px;
+  background: #e3f2fd; /* Soft blue background for images */
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+/* Special style for 6.png: show only the top to middle part of the image */
+section img[src*="6.png"] {
+  object-position: center; /* Align image to the top */
+}
+
+/* Card text style */
+section p {
+  font-size: 1em;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Timeline scroll hint text */
+body > p {
+  text-align: center;
+  color: #0071c5;
+  font-size: 1em;
+  margin-top: 18px;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+/* Hide the full description by default, show only the preview */
+.card-desc-full {
+  display: none;
+}
+.card-desc-short {
+  display: inline;
+}
+
+/* On hover, hide the short preview and show the full description */
+section > div:hover .card-desc-short {
+  display: none;
+}
+section > div:hover .card-desc-full {
+  display: inline;
+}
+
+/* Responsive: Stack timeline cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 18px;
+    padding: 24px 6px 16px 6px;
+    overflow-x: visible; /* No horizontal scroll needed */
+    scroll-snap-type: none; /* Disable scroll snap on vertical layout */
+  }
+  section > div {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%; /* Cards take full width */
+    padding: 14px 10px 12px 10px;
+    scroll-snap-align: none; /* No snap for vertical cards */
+  }
+}
